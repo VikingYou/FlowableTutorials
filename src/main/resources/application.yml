@@ -8,10 +8,14 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  jpa:
+    hibernate:
+      ddl-auto: update
 #  devtools:
 #    add-properties: false
 server:
   port: 8045
 flowable:
   check-process-definitions: true
+
 
