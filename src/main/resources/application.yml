@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: flowableLearn
+  datasource:
+    url: jdbc:mysql://localhost:3306/flowable_app?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true
+    username: root
+    password: ycd200709
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+#  devtools:
+#    add-properties: false
+server:
+  port: 8045
+flowable:
+  check-process-definitions: true
+
