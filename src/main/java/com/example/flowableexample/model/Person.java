@@ -35,6 +35,13 @@ public class Person {
 
     private Date birthDate;
 
+    public Person(String username, String firstName, String lastName, Date birthDate) {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthDate = birthDate;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

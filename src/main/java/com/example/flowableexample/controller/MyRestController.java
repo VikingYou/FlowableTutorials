@@ -23,8 +23,8 @@ public class MyRestController {
     private MyService myService;
 
     @PostMapping("/process")
-    public void startProcessInstance() {
-        myService.startProcesses();
+    public void startProcessInstance(@RequestBody StartProcessRepresentation startProcessRepresentation) {
+        myService.startProcesses(startProcessRepresentation.getAssignee());
     }
 
     @GetMapping(value = {"/tasks"}, produces = {MediaType.APPLICATION_JSON_VALUE})
@@ -36,5 +36,18 @@ public class MyRestController {
         }
 
         return dtos;
+    }
+
+    static class StartProcessRepresentation {
+
+        private String assignee;
+
+        public String getAssignee() {
+            return assignee;
+        }
+
+        public void setAssignee(String assignee) {
+            this.assignee = assignee;
+        }
     }
 }

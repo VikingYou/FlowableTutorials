@@ -33,18 +33,19 @@ public class MyService {
 
     public void startProcesses(String assignee) {
         Person person = personRepository.findByUsername(assignee);
-        Map<String ,Object> variables = new HashMap<>();
-        variables.put("person",person);
-        runtimeService.startProcessInstanceByKey("oneTaskProcess",variables);
+        Map<String, Object> variables = new HashMap<>();
+        variables.put("person", person);
+        runtimeService.startProcessInstanceByKey("oneTaskProcess", variables);
     }
 
     public List<Task> getTasks(String assignee) {
         return taskService.createTaskQuery().taskAssigned().list();
     }
 
-    public void createDemoUsers(){
-        if (personRepository.findAll().size() ==0){
-//            personRepository.save(new Person("jbarrez","Joram","Barrez",new Date()));
+    public void createDemoUsers() {
+        if (personRepository.findAll().size() == 0) {
+            personRepository.save(new Person("jbarrez", "Joram", "Barrez", new Date()));
+            personRepository.save(new Person("trademakers", "Tijis", "Radmakers", new Date()));
         }
     }
 
